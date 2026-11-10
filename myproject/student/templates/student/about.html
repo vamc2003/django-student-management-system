@@ -1,0 +1,42 @@
+
+{% extends 'student/base.html' %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+
+<section class="page-banner">
+    <h1>About Our System</h1>
+    <p>Making student record management simple and organized.</p>
+</section>
+
+<div class="info-card">
+    <h2>Who We Are</h2>
+
+    <p>
+        Student Management System is a web-based application
+        developed using Python and Django.
+    </p>
+
+    <p>
+        It helps administrators manage student information,
+        courses and school records efficiently.
+    </p>
+</div>
+
+<div class="info-card">
+    <h2>Our Features</h2>
+
+    <ul>
+        <li>Add new student records</li>
+        <li>View all registered students</li>
+        <li>Update student information</li>
+        <li>Delete student records</li>
+        <li>Search and filter students</li>
+        <li>View student statistics through dashboard</li>
+    </ul>
+</div>
+
+<a href="{% url 'home' %}">Back to Home</a>
+
+{% endblock %}

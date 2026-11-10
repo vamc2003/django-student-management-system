@@ -1,0 +1,32 @@
+
+{% extends 'student/base.html' %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+
+<section class="page-banner">
+    <h1>Contact Us</h1>
+    <p>Have a question? We'd be happy to hear from you.</p>
+</section>
+
+<div class="info-card">
+
+    <h2>Get in Touch</h2>
+
+    <p>
+        If you have any questions or suggestions about
+        our Student Management System, feel free to contact us.
+    </p>
+
+    <div class="contact-details">
+        <p><strong>Application:</strong> Student Management System</p>
+        <p><strong>Technology:</strong> Python, Django, HTML and CSS</p>
+        <p><strong>Purpose:</strong> Student record management</p>
+    </div>
+
+</div>
+
+<a href="{% url 'home' %}">Back to Home</a>
+
+{% endblock %}
