@@ -1,0 +1,58 @@
+
+{% extends 'student/base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<h1>Student Management Dashboard</h1>
+
+<div class="dashboard">
+
+    <div class="stat-card">
+        <h3>Total Students</h3>
+        <h1>{{ total_students }}</h1>
+    </div>
+
+    <div class="stat-card">
+        <h3>Total Schools</h3>
+        <h1>{{ total_schools }}</h1>
+    </div>
+
+    <div class="stat-card">
+        <h3>Total Courses</h3>
+        <h1>{{ total_courses }}</h1>
+    </div>
+
+</div>
+
+<h2>Recently Added Students</h2>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Course</th>
+    </tr>
+
+    {% for student in recent_students %}
+    <tr>
+        <td>{{ student.id }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.course }}</td>
+    </tr>
+
+    {% empty %}
+    <tr>
+        <td colspan="4">No students available</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+
+<a href="{% url 'student_list' %}">View All Students</a>
+
+{% endblock %}
