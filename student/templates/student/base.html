@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Student Management{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'student/style.css' %}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h2>Student Management</h2>
+
+        <div>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'student_list' %}">Students</a>
+            <a href="{% url 'add_student' %}">Add Student</a>
+            <a href="{% url 'dashboard' %}">Dashboard</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>

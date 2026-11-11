@@ -1,0 +1,68 @@
+
+{% extends 'student/base.html' %}
+
+{% block title %}Home | Student Management System{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <h1>Welcome to Student Management System</h1>
+
+    <p>
+        Manage students, track courses, maintain school records
+        and organize student information in one place.
+    </p>
+
+    <div class="hero-buttons">
+        <a href="{% url 'student_list' %}" class="btn">
+            View Students
+        </a>
+
+        <a href="{% url 'add_student' %}" class="btn secondary-btn">
+            Add New Student
+        </a>
+    </div>
+
+</section>
+
+<h2 class="section-heading">What You Can Do</h2>
+
+<div class="feature-container">
+
+    <div class="feature-card">
+        <h2>👨‍🎓</h2>
+        <h3>Student Details</h3>
+        <p>View and manage all registered student information.</p>
+        <a href="{% url 'student_list' %}">Explore Students →</a>
+    </div>
+
+    <div class="feature-card">
+        <h2>➕</h2>
+        <h3>Add Students</h3>
+        <p>Register new students and save their details.</p>
+        <a href="{% url 'add_student' %}">Add Student →</a>
+    </div>
+
+    <div class="feature-card">
+        <h2>📊</h2>
+        <h3>Dashboard</h3>
+        <p>View student statistics and recent registrations.</p>
+        <a href="{% url 'dashboard' %}">View Dashboard →</a>
+    </div>
+
+    <div class="feature-card">
+        <h2>🏫</h2>
+        <h3>About Us</h3>
+        <p>Learn more about this student management application.</p>
+        <a href="{% url 'about' %}">Learn More →</a>
+    </div>
+
+</div>
+
+<section class="home-footer">
+    <h2>Simple. Organized. Efficient.</h2>
+    <p>Your student records, all in one place.</p>
+</section>
+
+{% endblock %}
