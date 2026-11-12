@@ -4,6 +4,15 @@
 {% block title %}Contact Us{% endblock %}
 
 {% block content %}
+<h2>Contact Us</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Send Message</button>
+</form>
 
 <section class="page-banner">
     <h1>Contact Us</h1>

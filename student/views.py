@@ -3,6 +3,7 @@ from .models import Student
 from .forms import StudentForm
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator
+from .forms import ContactForm
 
 def home(request):
     return render(request, 'student/home.html')
@@ -145,3 +146,21 @@ def dashboard(request):
         'student/dashboard.html',
         context
     )
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['message']
+
+            print(name, email, subject, message)
+
+    else:
+        form = ContactForm()
+
+    return render(request, 'student/contact.html', {
+        'form': form
+    })

@@ -19,4 +19,5 @@ path(
     name='delete_student'
 ),
 path('dashboard/', views.dashboard, name='dashboard'),
+path('contact/', views.contact, name='contact'),
 ]
